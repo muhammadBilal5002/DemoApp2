@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+:root{
+    --color1:rgba(245, 238, 238, 0.089);
+    --primary: #e6e6e62f;
+    --pure: #e6e6e69c;
+    --dark: #414905a9;
+    --smoke: whitesmoke;
+    --dark-gray: #999;
+
+}
+
+body{
+    position: relative;
+    height: 100%;
+    background: var(--color1);
+    font-family: 'Roboto', sans-serif;
+    color: var(--pure);
+}
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap');
+h3{
+    color: rgb(3, 3, 3);
+}
+#search{
+    width: 50vw;
+    border-radius: 10px;
+    height: 40px;
+}
+#searchbtn{
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-top: 0px;
+    height: 40px;
+}
+#nav1{
+    display: flex;
+    justify-content: space-between;
+    background: var(--primary);
+    align-items: center;
+    padding: 8px 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.123);
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+nav ul li a{
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Merriweather Sans', sans-serif;
+    color: #edf0f1;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    padding: 2px 10px;
+    transition: all 250ms ease-in;
+}
+.button{
+    font-family: 'Merriweather Sans', sans-serif;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.041);
+    cursor: pointer;
+    color: black;
+    background-color: var(--pure);
+    transition: all 250ms ease-in;
+}
+.logoimg{
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+#nav1 button:nth-child(1){
+    margin-right: 30px;
+}
+nav ul li a:hover{
+    border: 2px solid azure;
+    color: rgb(18, 138, 250);
+}
+.button:hover{
+    background-color: var(--dark-gray);;
+    color:rgb(189, 15, 15);
+}
+textarea,input{
+    padding-left: 2px;
+}
+#menu{
+    cursor: pointer;
+    display: none;
+    user-select: none;
+}
+#set-remarks-inp{
+    width: 100%;
+}
+#nav2{
+    display: none;
+}
+#nav2{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--primary);
+}
+#nav2 div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#nav2 ul{
+    align-items: center;
+    justify-content: space-evenly;
+}
+.overpage{
+    height: 100%;
+    width: 100vw;
+    position: absolute;
+    color: black;
+    z-index: 1;
+    background-color: rgba(253, 253, 253, 0.39);
+    margin: 0;
+}
+#setting-remarks,#updating-users{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 500px;
+    gap: 10px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+    background-color: rgba(253, 253, 253, 1);
+    
+}
+#setting-remarks span span,#updating-users span{
+    font-weight: 600;
+}
+#setting-remarks span{
+    max-width: 100%;
+    word-wrap: break-word;
+}
+#set-cencel-button{
+    display: flex;
+    margin-top: 0px 10px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+#updating-users input, #updating-users textarea{
+    width: 100%;
+    height: 35px;
+    border: 1px solid rgba(0, 0, 0, 0.13);
+    
+}
+#updating-users textarea{
+    min-height: 70px;
+
+}
+/* 
+.container {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  } */
+@media screen and (max-width: 650px) {
+    #user-id-detail{
+        font-size: 15px;
+    }
+    #one-user-info,#setting-remarks,#updating-users{
+        width: 90%;
+    }
+    #single-task-detail{
+        min-width: 100%;
+    }#task-create{
+        width: 95vw;
+    }
+    #nav1 li{
+        display: none;
+    }
+    #nav1 .logoimg{
+        display: none;
+    }
+    #menu{
+        display: block;
+    }
+}
+
+
