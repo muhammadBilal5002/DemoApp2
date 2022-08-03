@@ -23,6 +23,7 @@ cookie:Mycookie("token")
     }
     else {
         cancelStauts.click()
+        dispatch(setTask({type:"Updated",id,status:"Uncompleted"}))
         alert("Cant Update Time Out!")
     }
 }
