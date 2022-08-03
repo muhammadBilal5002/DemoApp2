@@ -56,7 +56,7 @@ window.addEventListener('resize', function(){
     <br/>
     <div>
 
-    <Link to="/logout">
+    <Link  to="/" onClick={()=>{logout(dispatch)>
         <img className="logoimg" src="./images/avtar.jpg"/>
     </Link>
     
