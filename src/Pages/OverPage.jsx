@@ -8,7 +8,8 @@ function SetStatus(deadline,id,status,cancelStauts,dispatch) {
     if (new Date(deadline) > Date.now()) {
         axiosInstance.post("/task/updatetask", {
             taskId: id,
-            status
+            status,
+            cookie:Mycookie("token")
         })
             .then((res) => {
                 cancelStauts.click()
@@ -28,7 +29,8 @@ function SetRemarks(remarks,id,cancelStauts,dispatch,setremarks) {
     if (remarks!="") {
         axiosInstance.post("/adminmangment/SetRemarks", {
             taskId: id,
-            remarks
+            remarks,
+            cookie:Mycookie("token")
         })
             .then((res) => {
                 cancelStauts.click()
