@@ -16,4 +16,10 @@ function ClearCookies(){
    });
 }
 
-export  {GetCookies,ClearCookies}
+function mycookie(cName){
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();    
+}
+
+export  {GetCookies,ClearCookies,mycookie}
