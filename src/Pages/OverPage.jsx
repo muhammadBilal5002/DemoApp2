@@ -63,7 +63,7 @@ function OverPage() {
                     <span><span>Detail: </span>{data.detail}</span>
                     <span><span>Description: </span>{data.description}</span>
                     <span><span>Priority: </span>{data.priority}</span>
-                    <span><span>Date: </span>{data.deadline}</span>
+                    <span><span>Date: </span>{new Date(data.deadline).toString()}</span>
                     <span><span>Status: </span>{data.status}</span>
                     <span><span>Remarks: </span>{data.remarks}</span>
                     <textarea id="set-remarks-inp" value={remarks} onChange={(e) => { setremarks(e.target.value)}}/>
@@ -89,7 +89,7 @@ function OverPage() {
                         <option value="High">High</option>
                     </select>
                     <span>Date: </span>
-                    <input type="deadline" disabled id="dealine_inp" style={{ width: "50%" }} value={data.deadline} />
+                    <span disabled  style={{ width: "50%" }}  > {new Date(data.deadline).toString()}</span>
                     <span>Remarks: </span>
                     <p>{data.remarks}</p>
                     <span value>Status: </span>
