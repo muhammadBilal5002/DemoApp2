@@ -4,5 +4,5 @@ const axiosInstance = axios.create({
     withCredentials: true,
 });
 
-
+axiosInstance.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
 export {axiosInstance}
