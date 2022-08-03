@@ -9,7 +9,7 @@ function User() {
     const dispatch = useDispatch()
     const alltask = useSelector((state) => state.mytask);
     useEffect(()=>{
-        axiosInstance.post("/task/getmytask",{})
+        axiosInstance.post("/task/getmytask",{cookie:"dasdasdasda"})
         .then((res)=>{
             dispatch(setTask({type:"New",task:res.data.task}))
         })
@@ -58,8 +58,8 @@ function User() {
                         detail: mydetail,
                         description: mydiscription,
                         priority: mypriority,
-                        deadline: mydeadline
-
+                        deadline: mydeadline,
+                        cookie:"dasdasdasda"
                     })
                         .then((res) => {
                             settitle("")
