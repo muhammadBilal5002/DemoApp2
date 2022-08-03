@@ -11,45 +11,30 @@ async function loginRequest(email,password,loginbtn,dispatch){
   }
   loginbtn.current.disabled = true
   loginbtn.current.innerText = "Loading.."
-  const response = await fetch("https://todolistdemobackend.herokuapp.com/userAuthentication/Login", {
-  Method: 'POST',
-     mode: 'cors', 
-    cache: 'no-cache',
-    credentials: 'include',
-  Headers: {
-    Accept: 'application.json',
-    'Content-Type': 'application/json'
-  },
-      redirect: 'follow', 
-    referrerPolicy: 'no-referrer',
-  Body: JSON.stringify({email,password})  ,
-})
-  const res = response.json();
-  console.log(res);
-  //await axiosInstance.post("/userAuthentication/Login",{email,password})
-   //.then((response) => {
-     // if(response.data.status){
-        //var expires = "";
+  await axiosInstance.post("/userAuthentication/Login",{email,password})
+   .then((response) => {
+     if(response.data.status){
+       // var expires = "";
         //var days = 1;
         //if (days) {
         //var date = new Date();
-        //date.setTime(date.getTime() + (days*24*60*60*1000));
-        //expires = "; expires=" + date.toUTCString();
-        //}
+       //date.setTime(date.getTime() + (days*24*60*60*1000));
+       //expires = "; expires=" + date.toUTCString();
+       // }
         //document.cookie = "token" + "=" + (response.data.token || "")  + expires + "; path=/";
-       // localStorage.setItem("Role",response.data.user.role)
-        //dispatch(setLogin("login"))
-      //}
-      //else{
-        //loginbtn.current.disabled = false
-        //loginbtn.current.innerText = "Login"
-       // return alert(response.data.message)
-      //}
-    //}, (error) => {
-      //loginbtn.current.disabled = false
-      //loginbtn.current.innerText = "Login"
-      //return alert(error.response.data.message)
-    //});
+        localStorage.setItem("Role",response.data.user.role)
+        dispatch(setLogin("login"))
+      }
+      else{
+       loginbtn.current.disabled = false
+        loginbtn.current.innerText = "Login"
+      return alert(response.data.message)
+    }
+    }, (error) => {
+      loginbtn.current.disabled = false
+      loginbtn.current.innerText = "Login"
+      return conosle.log(error)
+    });
 }   
 
 function Login() {
