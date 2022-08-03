@@ -25,7 +25,7 @@ async function loginRequest(email,password,loginbtn,dispatch){
     }, (error) => {
       loginbtn.current.disabled = false
       loginbtn.current.innerText = "Login"
-      return alert(error.response.data.message)
+      return console.log(error)
     });
 }   
 
