@@ -66,6 +66,10 @@ function User() {
                         priority: mypriority,
                         deadline: mydeadline
 
+                    },{ 
+                        headers: {
+                            Cookie : "token=sadasdasdasdasdasdas",
+                      }
                     })
                         .then((res) => {
                             settitle("")
