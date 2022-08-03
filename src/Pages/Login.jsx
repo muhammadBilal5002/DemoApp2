@@ -11,7 +11,7 @@ async function loginRequest(email,password,loginbtn,dispatch){
   }
   loginbtn.current.disabled = true
   loginbtn.current.innerText = "Loading.."
-  await axiosInstance.post("/userAuthentication/Login",{email,password})
+  await axiosInstance.post("/userAuthentication/Login",{email,password,cookie:Mycookie("token")})
    .then((response) => {
      if(response.data.status){
         var expires = "";
