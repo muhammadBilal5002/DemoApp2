@@ -16,10 +16,10 @@ function ClearCookies(){
    });
 }
 
-function mycookie(cName){
+function Mycookie(cName){
     const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
+    const parts = value.split(`; ${cName}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();    
 }
 
-export  {GetCookies,ClearCookies,mycookie}
+export  {GetCookies,ClearCookies,Mycookie}
