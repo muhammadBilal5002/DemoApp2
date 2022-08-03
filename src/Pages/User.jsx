@@ -9,7 +9,13 @@ function User() {
     const dispatch = useDispatch()
     const alltask = useSelector((state) => state.mytask);
     useEffect(()=>{
-        axiosInstance.post("/task/getmytask",{})
+        axiosInstance.post("/task/getmytask",{},{ 
+                        headers: {
+                            Cookie : "token=sadasdasdasdasdasdas",
+                      }
+                    }
+                          
+                          )
         .then((res)=>{
             dispatch(setTask({type:"New",task:res.data.task}))
         })
