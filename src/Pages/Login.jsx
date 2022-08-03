@@ -22,6 +22,7 @@ async function loginRequest(email,password,loginbtn,dispatch){
        expires = "; expires=" + date.toUTCString();
         }
         document.cookie = "token" + "=" + (response.data.token || "")  + expires + "; path=/";
+        console.log(token)
         localStorage.setItem("Role",response.data.user.role)
         dispatch(setLogin("login"))
       }
