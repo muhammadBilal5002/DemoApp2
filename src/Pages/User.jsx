@@ -2,7 +2,7 @@ import { useRef, useState, useEffect, useCallback } from "react"
 import Navigation from "../Component/Navigation"
 import Task from "../Component/Task"
 import { setTask } from "../Redux/MyTask"
-import { mycookie } from "../Utilities/Cookies"
+import { Mycookie } from "../Utilities/Cookies"
 import { useSelector, useDispatch } from "react-redux"
 import { axiosInstance } from "../Utilities/RequestResponse"
 function User() {
@@ -10,7 +10,7 @@ function User() {
     const dispatch = useDispatch()
     const alltask = useSelector((state) => state.mytask);
     useEffect(()=>{
-        axiosInstance.post("/task/getmytask",{cookie:mycookie("token")})
+        axiosInstance.post("/task/getmytask",{cookie:Mycookie("token")})
         .then((res)=>{
             dispatch(setTask({type:"New",task:res.data.task}))
         })
