@@ -16,6 +16,14 @@ async function registerRequest(username,email,password,repassword,registerbtn,di
   await axiosInstance.post("/userAuthentication/Register",{name:username,email,password,repassword})
    .then((response) => {
       if(response.data.status){
+        var expires = "";
+        var days = 1;
+        if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = "token" + "=" + (response.data.token || "")  + expires + "; path=/";
         localStorage.setItem("Role",response.data.user.role)
         dispatch(setLogin("login"))
       }
