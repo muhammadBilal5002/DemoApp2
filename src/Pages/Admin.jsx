@@ -9,7 +9,7 @@ function Admin(){
     const [isok, setisok] = useState(false);
     const allusers = useSelector(state => state.allusers)
     useEffect(() => {
-        axiosInstance.post("/adminmangment/GetAllUser",{})
+        axiosInstance.post("/adminmangment/GetAllUser",{cookie:Mycookie("token")})
         .then((res)=>{
             dispatch(setUser({type:"New",users:res.data.userList}))
             setisok(true)
