@@ -19,7 +19,7 @@ style={{cursor:status=="Pending"?"pointer":"default", backgroundColor:status=="P
 <h6 id="task-detail"><span className="bold">Detail: </span> {props.value.detail}</h6>
 <h6 id="task-discription"><span className="bold">Description: </span> {props.value.description}</h6>
 <h6 id="task-priority"><span className="bold">Priority: </span> {props.value.priority}</h6>
-<h6 id="task-deadline"><span className="bold">Deadline: </span> {props.value.deadline}</h6>
+<h6 id="task-deadline"><span className="bold">Deadline: </span> {new Date(props.value.deadline).toString()}</h6>
 <p id="task-status"><span className="bold">Status: </span> <span style={{fontWeight:"600",color:status=="Uncompleted"?"red":status=="Pending"?"black":"darkgreen"}}>{status}</span></p>
 <p id="task-remarks"><span className="bold">Remarks: </span> {props.value.remarks?props.value.remarks:""}</p>
 </div>
