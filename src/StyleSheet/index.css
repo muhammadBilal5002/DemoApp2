@@ -198,7 +198,7 @@ textarea,input{
     }
     #single-task-detail{
         min-width: 100%;
-    }#task-create{
+    }#task-create,#one-user-info{
         width: 95vw;
     }
     #nav1 li{
